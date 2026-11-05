@@ -44,15 +44,7 @@
   color: var(--text-neutral-inverse);
 }
 .hero__line { display: block; animation: hero-rise 900ms var(--ease-out) both; animation-delay: var(--d); }
-.hero__brand {
-  color: var(--text-highlight);
-  background: linear-gradient(90deg, var(--text-highlight) 0%, #7cf0a9 50%, var(--text-highlight) 100%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: brand-shine 4s ease-in-out 1.2s infinite;
-}
+.hero__brand { color: var(--text-highlight); } /* color sólido, sin degradado ni animación */
 
 .hero__subtitle {
   font: var(--font-weight-regular) var(--size-600)/var(--lh-body) var(--font-family-heading);
@@ -110,9 +102,7 @@
   gap: var(--space-16);
   padding: var(--space-16);
   border-radius: 100px;
-  transition: transform var(--dur-med) var(--ease-out);
 }
-.benefit:hover { transform: translateY(-2px); } /* solo movimiento, sin fondo */
 .benefit + .benefit { position: relative; }
 .benefit + .benefit::before {
   content: '';
@@ -130,15 +120,19 @@
   flex: none;
   display: grid;
   place-items: center;
-  border-radius: 73px;
-  transition: transform var(--dur-med) var(--ease-spring);
+  border-radius: 50%;
 }
-.benefit:hover .benefit__icon { transform: scale(1.1) rotate(-6deg); }
 .benefit__icon img { width: 28px; height: 28px; }
 .benefit__icon--brand {
   background: var(--bg-brand-primary);
   color: var(--text-neutral-inverse);
-  font: var(--font-weight-bold) var(--size-800)/1.2 var(--font-family-heading);
+  font: var(--font-weight-bold) var(--size-800)/1 var(--font-family-heading);
+}
+/* Centra el carácter (0 / %) ópticamente dentro del círculo */
+.benefit__glyph {
+  display: block;
+  line-height: 1;
+  text-box: trim-both cap alphabetic;
 }
 .benefit__text {
   width: 176px;
@@ -157,7 +151,6 @@
   50% { translate: 0 -14px; rotate: 1.2deg; }
 }
 @keyframes glow { 0%, 100% { opacity: 0.7; transform: scale(1); } 50% { opacity: 1; transform: scale(1.08); } }
-@keyframes brand-shine { 0%, 100% { background-position: 0% 0; } 50% { background-position: 100% 0; } }
 
 /* ---------- Desktop pequeño ---------- */
 @media (max-width: 1439px) and (min-width: 1180px) {

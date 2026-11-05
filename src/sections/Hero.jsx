@@ -24,7 +24,7 @@ function BenefitList({ items, className }) {
       {items.map((b, i) => (
         <li className="benefit" key={`${b.text}-${i}`}>
           <span className={`benefit__icon ${b.highlight ? 'benefit__icon--brand' : ''}`} aria-hidden="true">
-            {b.highlight ? b.icon : <img src={b.icon} alt="" width="28" height="28" />}
+            {b.highlight ? <span className="benefit__glyph">{b.icon}</span> : <img src={b.icon} alt="" width="28" height="28" />}
           </span>
           <span className="benefit__text">{b.text}</span>
         </li>

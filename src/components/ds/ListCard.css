@@ -14,8 +14,6 @@
   font: var(--font-weight-medium) var(--size-500)/var(--lh-body) var(--font-family-body);
   color: var(--text-neutral-default);
 }
-.list-card--benefit .list-card__icon { transition: transform var(--dur-med) var(--ease-spring); }
-.list-card--benefit:hover .list-card__icon { transform: rotate(72deg) scale(1.12); }
 
 .list-card--note {
   padding: var(--space-8);
@@ -29,17 +27,14 @@
   font: var(--font-weight-medium) var(--size-500)/var(--lh-body) var(--font-family-body);
   color: var(--text-brand-secondary);
   transition:
-    transform var(--dur-med) var(--ease-out),
     box-shadow var(--dur-med) var(--ease-out),
     background-color var(--dur-med) var(--ease-out);
 }
-.list-card--requirement .list-card__icon { transition: transform var(--dur-med) var(--ease-spring); }
+/* Hover sin movimiento: solo cambia el fondo y aparece la sombra */
 .list-card--requirement:hover {
-  transform: translateX(8px);
   background: var(--bright-green-50);
   box-shadow: var(--shadow-raised);
 }
-.list-card--requirement:hover .list-card__icon { transform: translateX(6px); }
 
 @media (max-width: 1179px) {
   .list-card--requirement { font-weight: var(--font-weight-regular); }

@@ -30,12 +30,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.02);
-  transition: transform 1.4s var(--ease-out);
-  animation: banner-breathe 9s ease-in-out infinite alternate;
 }
-.banner:hover .banner__media img { transform: scale(1.08); }
-@keyframes banner-breathe { to { object-position: 50% 40%; } }
 
 @media (max-width: 1439px) and (min-width: 1180px) {
   .banner__media { width: 46%; }

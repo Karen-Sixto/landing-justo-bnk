@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useBackdropTone } from '../../hooks/useLiquidGlass.js';
 import './Navbar.css';
 
 const LINKS = [
@@ -12,13 +13,17 @@ const LINKS = [
 
 /**
  * DS · Navbar (Device = Web / Tablet / Mobile)
- * Header fijo con efecto "liquid glass": transparente sobre el hero y
- * vidrio esmerilado con tinte forest al hacer scroll.
+ * Header fijo. Transparente sobre el hero y, al hacer scroll, fondo con blur
+ * (compatible con todos los navegadores), fill blanco 10% y drop shadow del DS.
+ * Logo y links cambian a verde cuando detrás hay un fondo claro, para que siempre se lean.
  */
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState('');
+  const navRef = useRef(null);
+  const tone = useBackdropTone(navRef);
+  const onLight = scrolled && tone === 'light' && !open;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -48,7 +53,10 @@ export default function Navbar() {
   }, [open]);
 
   return (
-    <header className={`navbar ${scrolled ? 'is-scrolled' : ''} ${open ? 'is-open' : ''}`}>
+    <header
+      ref={navRef}
+      className={`navbar ${scrolled ? 'is-scrolled' : ''} ${open ? 'is-open' : ''} ${onLight ? 'is-on-light' : ''}`}
+    >
       <div className="navbar__glass" aria-hidden="true" />
       <div className="navbar__inner">
         <button
@@ -65,7 +73,7 @@ export default function Navbar() {
         </button>
 
         <a href="#top" className="navbar__logo" aria-label="Jüsto, ir al inicio">
-          <img src="assets/logo-white.png" alt="Jüsto" width="144" height="40" />
+          <img src={onLight ? 'assets/logo-green.png' : 'assets/logo-white.png'} alt="Jüsto" width="144" height="40" />
         </a>
 
         <nav className="navbar__nav" aria-label="Principal">

@@ -41,7 +41,7 @@ export default function Faq() {
         <h2 className="faq__title reveal">Preguntas frecuentes</h2>
         {FAQS.map((f, i) => (
           <div key={f.q} className="reveal" style={{ '--delay': `${i * 60}ms` }}>
-            <Accordion title={f.q} defaultOpen>
+            <Accordion title={f.q}>
               {f.a}
             </Accordion>
           </div>

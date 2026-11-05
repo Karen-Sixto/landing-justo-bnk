@@ -27,12 +27,10 @@
   background: var(--bg-brand-primary);
   color: var(--text-neutral-default);
   transition:
-    transform 450ms var(--ease-out),
     box-shadow 450ms var(--ease-out),
     background-color 450ms var(--ease-out);
 }
 .step-card:hover {
-  transform: translateY(-8px) rotate(-0.6deg);
   background: var(--bg-brand-primary-hover);
   box-shadow: 0 24px 48px -24px rgb(21 114 68 / 0.6);
 }
@@ -48,10 +46,7 @@
 .step-card__n {
   display: inline-block;
   font-size: var(--size-1000);
-  transform-origin: left bottom;
-  transition: transform 450ms var(--ease-spring);
 }
-.step-card:hover .step-card__n { transform: scale(1.25); }
 .step-card__title { font: inherit; font-size: var(--size-800); }
 .step-card__text { font: var(--font-weight-regular) var(--size-600)/var(--lh-body) var(--font-family-heading); }
 
