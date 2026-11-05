@@ -1,0 +1,13 @@
+# Cabeceras para Cloudflare Pages
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  # Prototipo: evita que Google lo indexe. Quitar esta línea cuando sea la versión pública.
+  X-Robots-Tag: noindex, nofollow
+
+# Archivos con hash generados por Vite: caché larga
+/assets/index-*
+  Cache-Control: public, max-age=31536000, immutable

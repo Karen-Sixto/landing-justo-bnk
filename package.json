@@ -1,0 +1,26 @@
+{
+  "name": "justo-landing",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --open",
+    "build": "vite build",
+    "preview": "vite preview --open",
+    "cf:login": "npx wrangler@3 login",
+    "deploy": "npm run build && npx wrangler@3 pages deploy dist --project-name justo-landing --branch main",
+    "deploy:preview": "npm run build && npx wrangler@3 pages deploy dist --project-name justo-landing --branch preview"
+  },
+  "dependencies": {
+    "@fontsource/figtree": "^5.2.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.11"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

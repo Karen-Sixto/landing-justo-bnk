@@ -1,0 +1,55 @@
+/* DS · Footer (v2) */
+.footer {
+  background: var(--bg-brand-secondary);
+  color: var(--text-accent-bone);
+  padding: var(--space-32) 0;
+  font: var(--font-weight-medium) var(--size-300)/var(--lh-body) var(--font-family-body);
+}
+.footer strong { font-weight: var(--font-weight-bold); }
+
+/* Legales */
+.footer__legal { padding: var(--space-24); }
+.footer__legal-block + .footer__legal-block { margin-top: 1.5em; }
+
+/* Links: 4 columnas iguales */
+.footer__links { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding-block: var(--space-24); }
+.footer__col { min-width: 0; padding: var(--space-24); display: flex; flex-direction: column; gap: var(--space-24); }
+.footer__heading { font: var(--font-weight-bold) var(--size-500)/var(--lh-body) var(--font-family-body); color: var(--text-neutral-inverse); }
+.footer__col ul { display: flex; flex-direction: column; gap: var(--space-16); }
+
+.footer__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  font-weight: var(--font-weight-medium);
+  transition: color var(--dur-fast), font-weight var(--dur-fast);
+}
+.footer__link:hover { color: var(--neutral-0); font-weight: 600; } /* SemiBold, sin subrayado */
+
+/* Íconos de Buró y CONDUSEF (24px de alto, exportados de Figma) */
+.footer__link-icon { flex: none; object-fit: contain; }
+
+.whatsapp-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-24);
+  padding: var(--space-24);
+  border-radius: var(--radius-24);
+  background: var(--bg-accent-bone);
+  color: var(--text-neutral-default);
+  transition: transform 400ms var(--ease-spring), box-shadow 400ms var(--ease-out);
+}
+.whatsapp-card img { width: 24px; height: 24px; flex: none; transition: transform 400ms var(--ease-spring); }
+.whatsapp-card:hover { transform: translateY(-4px); box-shadow: 0 18px 36px -18px rgb(0 0 0 / 0.5); }
+.whatsapp-card:hover img { transform: rotate(-12deg) scale(1.15); }
+.whatsapp-card__text { display: flex; flex-direction: column; gap: var(--space-8); font-weight: var(--font-weight-medium); }
+
+.footer__bottom { padding: var(--space-24); text-align: right; font-weight: var(--font-weight-regular); }
+
+/* Tablet y mobile: links en cuadrícula 2×2 */
+@media (max-width: 1179px) {
+  .footer__links { grid-template-columns: repeat(2, minmax(0, 1fr)); padding-block: 0; }
+}
+@media (max-width: 599px) {
+  .footer__inner { width: calc(100% - 48px); }
+}

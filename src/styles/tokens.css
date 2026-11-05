@@ -1,0 +1,169 @@
+/* ==========================================================================
+   Jüsto DS Web V.1.0 — Design tokens
+   Fuente: Figma "Justo DS Web V.1.0" (colecciones Primitives, Typography, Mode)
+   ========================================================================== */
+
+/* JUST Sans: se usa la fuente instalada en el equipo (local()).
+   Si no está instalada, el prototipo cae a Figtree (similar). */
+@font-face {
+  font-family: 'JUST Sans';
+  src: local('JUST Sans Regular'), local('JUSTSans-Regular');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'JUST Sans';
+  src: local('JUST Sans Medium'), local('JUSTSans-Medium');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'JUST Sans';
+  src: local('JUST Sans SemiBold'), local('JUSTSans-SemiBold');
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'JUST Sans';
+  src: local('JUST Sans Bold'), local('JUSTSans-Bold');
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  /* ---------- Primitives ---------- */
+  --bright-green-50: #e9faf2;
+  --bright-green-100: #bcf0d6;
+  --bright-green-300: #6ee0a7;
+  --bright-green-500: #26d07c;
+  --bright-green-600: #23bd71;
+  --bright-green-800: #157244;
+  --bright-green-900: #105734;
+
+  --neutral-0: #ffffff;
+  --neutral-50: #f4f4f4;
+  --neutral-300: #b7b7b7;
+  --neutral-500: #797979;
+  --neutral-700: #464646;
+  --neutral-800: #1b1b1b;
+  --neutral-900: #111111;
+
+  --orange-300: #fea576;
+  --orange-500: #fe7833;
+  --forest-100: #b0ccc4;
+  --forest-300: #54917f;
+  --forest-500: #005b40;
+  --forest-700: #00412d;
+  --lime-300: #d7ff76;
+  --lime-500: #c4ff33;
+  --bone-300: #f5f2ea;
+  --bone-500: #f0ebdf;
+  --spring-green-49: #25d366;
+
+  /* ---------- Semantic (Light Mode) ---------- */
+  --bg-surface-default: var(--neutral-0);
+  --bg-surface-inverse: var(--neutral-900);
+  --bg-surface-disabled: var(--neutral-50);
+  --bg-brand-primary: var(--bright-green-500);
+  --bg-brand-primary-hover: var(--bright-green-300);
+  --bg-brand-secondary: var(--forest-500);
+  --bg-brand-secondary-hover: var(--forest-300);
+  --bg-accent-orange: var(--orange-500);
+  --bg-accent-orange-hover: var(--orange-300);
+  --bg-accent-lime: var(--lime-500);
+  --bg-accent-lime-hover: var(--lime-300);
+  --bg-accent-bone: var(--bone-500);
+  /* Verde usado en Bento "Inversiones" y Banner (bright-green-600) */
+  --bg-brand-primary-strong: var(--bright-green-600);
+
+  --text-neutral-default: var(--neutral-900);
+  --text-neutral-inverse: var(--neutral-0);
+  --text-neutral-disabled: var(--neutral-300);
+  --text-brand-primary: var(--bright-green-500);
+  --text-brand-secondary: var(--forest-500);
+  --text-accent-lime: var(--lime-500);
+  --text-accent-bone: var(--bone-500);
+  --text-highlight: var(--spring-green-49);
+
+  --border-neutral-disabled: var(--neutral-300);
+  --border-brand-primary: var(--bright-green-500);
+  --border-brand-secondary: var(--forest-500);
+
+  --icon-brand-secondary: var(--forest-500);
+
+  /* Shadows / effects */
+  --shadow-resting: 0 1px 3px rgb(0 0 0 / 0.05), 0 5px 22px rgb(0 0 0 / 0.05);
+  --shadow-raised: 0 2px 4px rgb(0 0 0 / 0.08), 0 8px 28px rgb(0 0 0 / 0.08);
+  --shadow-sunk: 0 1px 2px rgb(0 0 0 / 0.02), 0 2px 8px rgb(0 0 0 / 0.02);
+  --shadow-frosted-contact: rgb(0 0 0 / 0.06);
+  --shadow-frosted-ambient: rgb(0 0 0 / 0.1);
+  --effect-highlight: rgb(255 255 255 / 0.5);
+  --effect-rim: rgb(255 255 255 / 0.1);
+
+  /* ---------- Spacing ---------- */
+  --space-0: 0px;
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-28: 28px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-56: 56px;
+  --space-64: 64px;
+  --space-80: 80px;
+
+  /* ---------- Radius ---------- */
+  --radius-8: 8px;
+  --radius-16: 16px;
+  --radius-24: 24px;
+  --radius-32: 32px;
+  --radius-40: 40px;
+  --radius-56: 56px;
+  --radius-full: 999px;
+
+  /* ---------- Typography ---------- */
+  --font-family-heading: 'JUST Sans', 'Figtree', system-ui, sans-serif;
+  --font-family-body: 'JUST Sans', 'Figtree', system-ui, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  --size-100: 12px;
+  --size-200: 14px;
+  --size-300: 16px;
+  --size-400: 18px;
+  --size-500: 20px;
+  --size-600: 24px;
+  --size-700: 28px;
+  --size-800: 32px;
+  --size-900: 36px;
+  --size-1000: 40px;
+  --size-1100: 48px;
+
+  --lh-heading: 1.2;
+  --lh-body: 1.5;
+
+  /* ---------- Layout ---------- */
+  --container: 1392px;
+  --gutter: 24px;
+  --nav-h: 104px;
+
+  /* ---------- Motion ---------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 160ms;
+  --dur-med: 320ms;
+  --dur-slow: 700ms;
+}
+
+@media (max-width: 1179px) {
+  :root { --nav-h: 96px; }
+}
+@media (max-width: 599px) {
+  :root { --gutter: 16px; --nav-h: 104px; }
+}

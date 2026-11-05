@@ -1,0 +1,17 @@
+.faq-section { padding: 60px 0; }
+.faq { display: flex; flex-direction: column; gap: 30px; }
+.faq__title {
+  margin-bottom: 0;
+  font: var(--font-weight-bold) var(--size-1000)/var(--lh-heading) var(--font-family-heading);
+  color: var(--text-brand-secondary);
+}
+
+@media (max-width: 1179px) {
+  .faq-section { padding: 40px 0; }
+  .faq { width: min(var(--container), 100% - 64px); }
+}
+@media (max-width: 599px) {
+  .faq-section { padding: 20px 0; }
+  .faq { width: calc(100% - 42px); }
+  .faq__title { font-size: var(--size-800); }
+}

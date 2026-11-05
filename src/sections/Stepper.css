@@ -1,0 +1,77 @@
+.stepper { background: var(--bg-surface-default); padding: var(--space-64) 0; }
+
+.stepper__inner { display: flex; align-items: center; gap: var(--space-24); }
+
+.stepper__title {
+  flex: none;
+  width: 330px;
+  font: var(--font-weight-bold) var(--size-1000)/var(--lh-heading) var(--font-family-heading);
+  color: var(--text-brand-secondary);
+}
+
+.stepper__cards {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 330px 1fr 1fr;
+  gap: var(--space-24);
+  counter-reset: none;
+}
+
+.step-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-40);
+  padding: var(--space-40) var(--space-32);
+  border-radius: var(--radius-32);
+  background: var(--bg-brand-primary);
+  color: var(--text-neutral-default);
+  transition:
+    transform 450ms var(--ease-out),
+    box-shadow 450ms var(--ease-out),
+    background-color 450ms var(--ease-out);
+}
+.step-card:hover {
+  transform: translateY(-8px) rotate(-0.6deg);
+  background: var(--bg-brand-primary-hover);
+  box-shadow: 0 24px 48px -24px rgb(21 114 68 / 0.6);
+}
+
+.step-card__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--lh-heading);
+}
+.step-card__n {
+  display: inline-block;
+  font-size: var(--size-1000);
+  transform-origin: left bottom;
+  transition: transform 450ms var(--ease-spring);
+}
+.step-card:hover .step-card__n { transform: scale(1.25); }
+.step-card__title { font: inherit; font-size: var(--size-800); }
+.step-card__text { font: var(--font-weight-regular) var(--size-600)/var(--lh-body) var(--font-family-heading); }
+
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1179px) {
+  .stepper { padding: var(--space-40) 0; }
+  .stepper__inner { flex-direction: column; gap: var(--space-64); width: min(var(--container), 100% - 64px); }
+  .stepper__title { width: 100%; text-align: center; font-size: var(--size-900); }
+  .stepper__cards { width: 100%; grid-template-columns: 1fr 1fr; }
+  .step-card:nth-child(3) { grid-column: 1 / -1; }
+  .step-card__title { font-size: var(--size-700); }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 599px) {
+  .stepper { padding: 20px 0; }
+  .stepper__inner { width: calc(100% - 48px); }
+  .stepper__title { font-size: var(--size-800); }
+  .stepper__cards { grid-template-columns: 1fr; }
+  .step-card__title { font-size: var(--size-600); line-height: var(--lh-body); }
+  .step-card__text { font-size: var(--size-500); }
+}
